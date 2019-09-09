@@ -1,5 +1,21 @@
 #ruta1{
+
+  position: fixed;
     height:200px;
     width:200px;
     background-color:pink;
+
+}
+#ruta2{
+
+    height:200px;
+    width:200px;
+    background-color:green;
+
+}
+#ruta3{
+
+    height:1000px;
+    width:200px;
+    background-color:lightgrey;
 }

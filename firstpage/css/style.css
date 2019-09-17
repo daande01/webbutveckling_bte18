@@ -4,32 +4,38 @@ margin-left: auto;
 margin-right: auto;
 }
 header{
-background-color: #A6FFD9;
+
 height: 100px;
 width: 100%;
+background-image: url('../bilder/bild.jpeg');
+background-size: cover;
+background-position: 0px -100px;
+
+background-repeat: no-repeat;
 }
 nav{
-  background-color: #97E8DD;
+  background-color: #ffffff;
   height: 50px;
   width: 100%;
 }
 main{
-  background-color:#B3F5FF;
+  background-color:#ffffff;
   height: 200px;
   width: 100%;
   display:flex;
 }
 article{
-  background-color: #97C8E8;
+  background-color: #ffffff;
   height: 200px;
   width: 70%;
 
 }
 aside{
-  background-color: #A6FFD9;
+  background-color: #ffffff;
   height: 200px;
   width: 30%;
 }
+
 footer{
   background-color: #A6C4FF;
   height: 200px;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+      <div style="height:200px; width:200px; background:pink;" id="knapp"> klicka här
+
+      </div>
+
+      <script>
+      document.getElementById("knapp").addEventListener("click", displayDate);
+
+        function displayDate() {
+          alert("test");
+            document.getElementById("knapp").innerHTML = "hej";
+        }
+
+      </script>
+  </body>
+</html>

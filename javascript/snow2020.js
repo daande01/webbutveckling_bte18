@@ -1,16 +1,13 @@
 
 
-
   var canvas = document.getElementById("canvas"); // skapar koppling till canvas
   var ctx= canvas.getContext("2d"); // ritar 2d
   var W=window.innerWidth;
-  var H=window.innerHeight;
+  var H=window.inneHeight;
 
-  console.log(H);
+  //console.log(H);
   canvas.width= W;
   canvas.height=H;
-
-
 
 function draw(){
     ctx.clearRect(0,0,W,H);
@@ -21,4 +18,4 @@ function draw(){
     ctx.fill();
 }
 
-setInterval(draw,100);
+draw();

@@ -1,9 +1,7 @@
-
-
-  var canvas = document.getElementById("canvas"); // skapar koppling till canvas
+var canvas = document.getElementById("canvas"); // skapar koppling till canvas
   var ctx= canvas.getContext("2d"); // ritar 2d
   var W=window.innerWidth;
-  var H=window.inneHeight;
+  var H=window.innerHeight;
 
   //console.log(H);
   canvas.width= W;
@@ -15,6 +13,7 @@ function draw(){
     ctx.beginPath(); // börjar rita
     ctx.moveTo(95,50);
     ctx.arc(95, 50, 40, 0, 2 * Math.PI,true); // x,y ,r,startpunkt
+
     ctx.fill();
 }
 

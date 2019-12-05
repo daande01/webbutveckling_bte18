@@ -4,7 +4,7 @@
   var y=100;
   var yv=1;
 
-
+ 
 
   var canvas = document.getElementById("canvas"); // skapar koppling till canvas
   var ctx= canvas.getContext("2d"); // ritar 2d

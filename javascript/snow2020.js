@@ -1,10 +1,7 @@
-
-
-  var x=100;
+var x=100;
   var y=100;
-  var yv=1;
+  var yspeed=2;
 
- 
 
   var canvas = document.getElementById("canvas"); // skapar koppling till canvas
   var ctx= canvas.getContext("2d"); // ritar 2d
@@ -30,22 +27,13 @@ function draw(){
 
 function update(){
 
-y++;
+y=y+yspeed;
 
-if(y>=H){
+if(y+40>=H){
 
-y=-y;
-
-
-}
+yspeed=-yspeed;
 
 
 }
-
-
-
-
-
-
-
-setInterval(draw,40);
+}
+setInterval(draw,20);

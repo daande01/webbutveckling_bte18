@@ -25,15 +25,14 @@ function draw(){
 }
 
 
-function update(){
+function update(){  // ansvarar för att flytta x och y och kolla om jag har träffat kant
 
-y=y+yspeed;
+y=y+yspeed;    // flyttar bollen från pos y till y+yspped     (yspeed=2) flyttar 2px / uppdatering
 
-if(y+40>=H){
+if(y+40>=H){    // när bollens origo i mitten av bollen + 40 når botten
 
 yspeed=-yspeed;
-
-
 }
+
 }
 setInterval(draw,20);

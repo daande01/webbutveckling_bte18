@@ -27,7 +27,7 @@ function draw(){
     update();
     console.log("nu körs draw");
     ctx.clearRect(0,0,W,H);
-    ctx.fillStyle="rgba(255,255,10,0.8)"; // sätter vit färg på pennan
+    ctx.fillStyle="rgba(255,255,255,0.8)"; // sätter vit färg på pennan
     ctx.beginPath(); // börjar rita
 for(var i =0; i<antalflingor;i++){
 
@@ -43,8 +43,27 @@ for(var i =0; i<antalflingor;i++){
     ctx.fill();
 }
 
-
+var angle=0;
 function update(){  // ansvarar för att flytta x och y och kolla om jag har träffat kant
+
+ angle +=0.01;
+
+
+  for(var i = 0; i<antalflingor;i++){
+      var p = particles[i];
+
+      p.y=p.y+1;
+      
+      p.y=p.y+Math.cos(angle+p.d)+1+p.r/2;
+
+      if (p.y> H){
+          p.y=0;
+
+      }
+
+  }
+
+
 
 
 }

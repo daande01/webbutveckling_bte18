@@ -2,10 +2,12 @@
 
 var antalflingor=1000;
 var particles=[];
+var W=window.innerWidth;
+var H=window.innerHeight;
 
 for(var i =0; i<antalflingor; i++){
 
-particles.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*4+1,d:Math.random()*mp});
+particles.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*4+1,d:Math.random()*antalflingor});
 
 }
 
@@ -15,8 +17,7 @@ var g =2;
 
   var canvas = document.getElementById("canvas"); // skapar koppling till canvas
   var ctx= canvas.getContext("2d"); // ritar 2d
-  var W=window.innerWidth;
-  var H=window.innerHeight;
+
 
   //console.log(H);
   canvas.width= W;
@@ -28,8 +29,16 @@ function draw(){
     ctx.clearRect(0,0,W,H);
     ctx.fillStyle="rgba(255,255,10,0.8)"; // sätter vit färg på pennan
     ctx.beginPath(); // börjar rita
-    ctx.moveTo(x,y);
-    ctx.arc(x, y, 40, 0, 2 * Math.PI,true); // x,y ,r,startpunkt
+for(var i =0; i<antalflingor;i++){
+
+  var p = particles[i];
+
+  ctx.moveTo(p.x,p.y);
+  ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI,true); // x,y ,r,startpunkt
+
+}
+
+
 
     ctx.fill();
 }
@@ -37,33 +46,6 @@ function draw(){
 
 function update(){  // ansvarar för att flytta x och y och kolla om jag har träffat kant
 
-yspeed=yspeed+g;
-x=x+xspeed;
-y=y+yspeed;    // flyttar bollen från pos y till y+yspped     (yspeed=2) flyttar 2px / uppdatering
-
-if(x+40>=W){
-
-  xspeed=-xspeed;
-
-}
-if(x-40<=0){
-  xspeed=-xspeed;
-}
-if(y+40>=H){    // när bollens origo i mitten av bollen + 40 når botten
-console.log(yspeed);
-y=y-10
-if(yspeed<11){
-
-  yspeed=0;
-  g=0;
-}
-
-yspeed=-yspeed;
-}
-if(y-40<=0){
-
-  yspeed=-yspeed
-}
 
 }
 setInterval(draw,20);

@@ -44,16 +44,21 @@ for(var i =0; i<antalflingor;i++){
 }
 
 var angle=0;
+var vinkel=0;
+
 function update(){  // ansvarar för att flytta x och y och kolla om jag har träffat kant
 
  angle +=0.01;
-
+vinkel+=0.01;
 
   for(var i = 0; i<antalflingor;i++){
       var p = particles[i];
 
-      p.y=p.y+1;
-      
+
+if(i%3==0){
+        p.x=p.x+Math.cos(vinkel);
+}
+
       p.y=p.y+Math.cos(angle+p.d)+1+p.r/2;
 
       if (p.y> H){
@@ -67,4 +72,4 @@ function update(){  // ansvarar för att flytta x och y och kolla om jag har tr�
 
 
 }
-setInterval(draw,20);
+setInterval(draw,40);

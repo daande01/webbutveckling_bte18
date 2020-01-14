@@ -4,7 +4,16 @@
   
   height: 200px;
   width: 200px;
+  overflow: hidden;
   
+  
+}
+
+#imgs{
+  
+  height: 200px;
+  width: 608px;
+  position: relative;
   
   
 }

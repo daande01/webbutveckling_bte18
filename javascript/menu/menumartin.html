@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>En fräsch meny</title>
+  
+  <script  type="text/javascript">
+
+  $(document).ready(function(){
+    $("div").click(function(){
+    
+    if ($("div").width()<200){
+    
+      var div = $("div");
+      div.animate({width: '99%', opacity: '1'}, "slow");
+      div.animate({height: '80%', opacity: '0.9'}, "slow");
+    }if($("div").width()>200){
+      
+      var div = $("div");
+      div.animate({width: '10%', opacity: '1'}, "slow");
+      div.animate({height: '10%', opacity: '0.9'}, "slow");
+      
+      
+    }
+    
+    
+    
+    });
+    
+    
+    
+    
+    
+  });
+  </script>
+
+  <style type="text/css">
+  .div1{
+    background:gray;
+    height:100px;
+    width:100px;
+    position:absolute;
+  }
+
+  .menu-content {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    margin-top: 70px;
+  }
+
+  .menu-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: 0.5s;
+  }
+
+  .div1 a:hover, .div1 a:focus {
+    color: green;
+    transition: 1.0s;
+  }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <div class="menu-content">
+      <a href="https://www.youtube.com">Startsida</a>
+      <br> <br> <br> <br>
+      <a href="https://www.youtube.com/channel/UCmN4cL3-IWi2UPCYNWUehVg/videos">Produkter</a>
+      <br> <br> <br> <br>
+      <a href="https://skagenmaul.github.io/FreshMenu/index.html">Reset</a>
+    </div>
+  </div>
+</body>
+</html>

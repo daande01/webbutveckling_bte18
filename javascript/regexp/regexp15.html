@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+	<meta http-equiv="Content-Script-Type" content="text/javascript">  
+    <script type="text/javascript">  
+   
+	
+
+	$(document).ready(function() {
+	  var knapp=false;
+		$("#phone").keyup(function(){
+	
+			var re = /^[0]{2}[0-9]{6,15}$/;    //måste börja med 2 st nollor, sedan 0-9 minst 6st max 15 där efter får de ej finnas något
+			
+			var OK = re.exec($('#phone').val());
+			
+			if (!OK) { 
+				$('#text').text("fel ");
+				knapp=false;
+				$('.test').remove();
+			}
+			else{
+				
+				$('#text').text("ok");
+				if(knapp==false)
+				{
+				$('#text').after($('<input class="test" type="button" value="test">'));
+				
+				}
+				knapp=true;
+				}
+			});
+	 
+	 
+		/*$( ".test" ).click(function() {
+			$('#sendshit').submit();
+		});
+		*/
+		
+		$(document).on('click', '.test', function(){ 
+			$('#sendshit').submit();
+			
+			
+		});
+		
+	 
+	});
+
+
+	</script>  
+	</head>  
+	<body>  
+		<form action="#" method="get" id ="sendshit" > 
+			<fieldset>
+				<legend>Ett formulär med fieldset runt</legend>
+		
+					<p>
+					  <label for="phone">
+						<span>fast tele: </span>
+						<input type="text" id="phone" name="tele" required />
+						<strong><abbr title="måste fyllas i">*</abbr></strong>
+						 <span id ="text"></span>
+					  </label>
+					</p>
+			</fieldset>
+	  
+	   </form> 
+
+
+	   
+	</body>  
+</html>

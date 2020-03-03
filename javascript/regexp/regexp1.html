@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<meta charset="UTF-8">  
+	
+   
+	</head>  
+	<body>  
+		<form action="#"> 
+			
+					
+						<label for="phone">fast tele:</label>
+						<input type="text" id="phone" name="tele" />
+						 <span id ="text"></span>
+		
+	   </form> 
+ <script>  
+   
+	
+
+	$(document).ready(function() {
+	  
+		$("#phone").keyup(function(){
+	
+			var re = /^[0]{2}[0-9]{6,15}$/;    //måste börja med 2 st nollor, sedan 0-9 minst 6st max 15 där efter får de ej finnas något
+			
+			var OK = re.exec(       $('#phone').val()       );
+			
+			if (!OK) { 
+				$('#text').text("du har ej ännu matat in ett korrekt telefonnummer ");
+				
+			}
+			else{
+				
+				$('#text').text("ok");
+				
+			}
+				
+			if ($('#phone').val().length===0){
+				$('#text').text("");
+			
+			}	
+		});
+	
+	 
+	});
+
+
+	</script>  
+
+	   
+	</body>  
+</html>
